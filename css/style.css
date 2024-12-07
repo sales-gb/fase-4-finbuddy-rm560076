@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa;
+}
+.dashboard-card {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+.card-purple {
+  background-color: #7d5df6;
+}
+.card-yellow {
+  background-color: #;
+  color: #333;
+}
+.card-chart {
+  background-color: white;
+  border: 1px solid #ddd;
+}
+.transaction-list {
+  max-height: 350px;
+  overflow-y: auto;
+}
+.transaction-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.transaction-item:last-child {
+  border-bottom: none;
+}
