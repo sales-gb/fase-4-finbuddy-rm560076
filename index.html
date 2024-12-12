@@ -13,112 +13,220 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
   </head>
-  <body>
-    <div
-      class="offcanvas offcanvas-start show"
-      data-bs-scroll="true"
-      data-bs-backdrop="false"
-      tabindex="-1"
-      id="offcanvasScrolling"
-      aria-labelledby="offcanvasScrollingLabel"
-      aria-modal="true"
-      role="dialog"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
-          Offcanvas with body scrolling
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <p>Try scrolling the rest of the page to see this option in action.</p>
-      </div>
-    </div>
 
-    <div class="container-lg mt-5">
+  <body class="container-lg">
+    <nav class="navbar navbar-expand-lg mt-2 bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">FinBuddy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Investimentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Histórico de transações</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="button">
+              Buscar
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mt-2">
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="dashboard-card card-purple">
-            <h4>Saldo</h4>
+          <div class="dashboard-card">
+            <h4 class="card-title">Saldo</h4>
             <h2>R$ 12.345,67</h2>
           </div>
         </div>
+
         <div class="col-md-4 mb-4">
-          <div class="dashboard-card card-yellow">
-            <h4>Poupado</h4>
+          <div class="dashboard-card">
+            <h4 class="card-title">Poupado</h4>
             <h2>R$ 2.000,00</h2>
           </div>
         </div>
+
         <div class="col-md-4 mb-4">
-          <div class="dashboard-card card-purple">
-            <h4>Investido</h4>
+          <div class="dashboard-card">
+            <h4 class="card-title">Investido</h4>
             <h2>R$ 5.000,00</h2>
           </div>
         </div>
       </div>
 
-      <!-- Graph and Transactions -->
       <div class="row">
         <div class="col-md-6 mb-4">
           <div class="card card-chart p-4">
-            <h5>Gastos do Último Mês</h5>
+            <h3 class="chart-title">Gastos do Último Mês</h3>
             <canvas id="spendingChart"></canvas>
           </div>
         </div>
+
         <div class="col-md-6 mb-4">
           <div class="card card-chart p-4">
-            <h5>Últimas Transações</h5>
+            <h3>Últimas Transações</h3>
+
             <div class="transaction-list">
-              <div class="transaction-item d-flex justify-content-between">
-                <span>Mercado</span>
-                <span>- R$ 100,00</span>
+              <div class="transaction-date">
+                <h6>Hoje</h6>
+                <span class="date-separator"></span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Academia</span>
-                <span>- R$ 50,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/mercado.svg" alt="Mercado" />
+                  </div>
+                  <span>Mercado</span>
+                </div>
+
+                <span class="outgoing">- R$ 100,00</span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Restaurante</span>
-                <span>- R$ 120,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/academia.svg" alt="Academia" />
+                  </div>
+
+                  <span>Academia</span>
+                </div>
+                <span class="outgoing">- R$ 50,00</span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Uber</span>
-                <span>- R$ 35,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img
+                      src="./assets/images/restaurante.svg"
+                      alt="Restaurante"
+                    />
+                  </div>
+
+                  <span>Restaurante</span>
+                </div>
+                <span class="outgoing">- R$ 120,00</span>
               </div>
-              <div class="transaction-item d-flex justify-content-between">
-                <span>Investimentos</span>
-                <span>+ R$ 500,00</span>
+
+              <div class="transaction-date">
+                <h6>Ontem</h6>
+                <span class="date-separator"></span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Aluguel</span>
-                <span>- R$ 1.200,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/uber.svg" alt="Uber" />
+                  </div>
+
+                  <span>Uber</span>
+                </div>
+
+                <span class="outgoing">- R$ 35,00</span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Farmácia</span>
-                <span>- R$ 80,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-incoming">
+                    <img
+                      src="./assets/images/investimento.svg"
+                      alt="Investimentos"
+                    />
+                  </div>
+                  <span>Investimentos</span>
+                </div>
+                <span class="incoming">+ R$ 500,00</span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Streaming</span>
-                <span>- R$ 40,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/casa.svg" alt="Aluguel" />
+                  </div>
+                  <span>Aluguel</span>
+                </div>
+                <span class="outgoing">- R$ 1.200,00</span>
               </div>
-              <div class="transaction-item d-flex justify-content-between">
-                <span>Roupas</span>
-                <span>- R$ 300,00</span>
+
+              <div class="transaction-date">
+                <h6>Anteontem</h6>
+                <span class="date-separator"></span>
               </div>
+
               <div class="transaction-item d-flex justify-content-between">
-                <span>Salário</span>
-                <span>+ R$ 3.500,00</span>
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/remedio.svg" alt="remédio" />
+                  </div>
+                  <span>Farmácia</span>
+                </div>
+
+                <span class="outgoing">- R$ 80,00</span>
+              </div>
+
+              <div class="transaction-item d-flex justify-content-between">
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/cinema.svg" alt="Cinema" />
+                  </div>
+                  <span>Streaming</span>
+                </div>
+
+                <span class="outgoing">- R$ 40,00</span>
+              </div>
+
+              <div class="transaction-item d-flex justify-content-between">
+                <div class="transaction-description">
+                  <div class="icon icon-outgoing">
+                    <img src="./assets/images/roupa.svg" alt="Roupas" />
+                  </div>
+
+                  <span>Roupas</span>
+                </div>
+                <span class="outgoing">- R$ 300,00</span>
+              </div>
+
+              <div class="transaction-item d-flex justify-content-between">
+                <div class="transaction-description">
+                  <div class="icon icon-incoming">
+                    <img src="./assets/images/recibo.svg" alt="Salário" />
+                  </div>
+
+                  <span>Salário</span>
+                </div>
+                <span class="incoming">+ R$ 3.500,00</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <script src="./js/index.js" defer></script>
     <script

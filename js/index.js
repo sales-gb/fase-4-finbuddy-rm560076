@@ -1,7 +1,5 @@
-// Seleciona o elemento do canvas para o gráfico
 const spendingChartElement = document.getElementById("spendingChart");
 
-// Dados para o gráfico
 const chartData = {
   labels: ["Alimentação", "Transporte", "Lazer", "Contas", "Outros"],
   datasets: [
@@ -13,9 +11,8 @@ const chartData = {
   ],
 };
 
-// Configuração do gráfico
 const chartConfig = {
-  type: "pie", // Pode ser 'bar', 'line', 'pie', etc.
+  type: "pie",
   data: chartData,
   options: {
     responsive: true,
@@ -27,7 +24,6 @@ const chartConfig = {
   },
 };
 
-// Inicializa o gráfico
 if (spendingChartElement) {
   new Chart(spendingChartElement, chartConfig);
 }
